@@ -31,15 +31,15 @@ public class MainActivity extends AppCompatActivity {
                 switch (item.getItemId()){
                     case R.id.menu_musik:
                         bukaFragment(new MusikFragment());
-                        getActionBar().setTitle("Musik");
+                        getSupportActionBar().setTitle("Musik");
                         return true;
                     case R.id.menu_album:
                         bukaFragment(new AlbumFragment());
-                        getActionBar().setTitle("Album");
+                        getSupportActionBar().setTitle("Album");
                         return true;
                     case R.id.menu_artis:
                         bukaFragment(new ArtisFragment());
-                        getActionBar().setTitle("Artis");
+                        getSupportActionBar().setTitle("Artis");
                         return true;
                 }
                 return false;
@@ -51,13 +51,13 @@ public class MainActivity extends AppCompatActivity {
         bnvMusikKita = findViewById(R.id.bnv_musik_kita);
         flContainer = findViewById(R.id.ft_container);
         bukaFragment(new MusikFragment());
-        getActionBar().setTitle("Musik");
+        getSupportActionBar().setTitle("Musik");
     }
 
-    private void bukaFragment(Fragment fnm){
+    private void bukaFragment(Fragment frm){
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
-       ft.replace(R.id.ft_container, fnm);
+       ft.replace(R.id.ft_container, frm);
        ft.commit();
     }
 }
